@@ -13,4 +13,12 @@ add_executable(lab2 main.cpp
         example4/Audit.cpp
         example4/Audit.h
         example4/Warehause.cpp
-        example4/Warehouse.h)
+        example4/Warehouse.h
+        exercise1/Sensor.cpp
+        exercise1/Sensor.h
+        exercise2/Student.cpp
+        exercise2/Student.h
+        exercise2/Course.cpp
+        exercise2/Course.h
+        exercise2/Registrar.cpp
+        exercise2/Registrar.h)

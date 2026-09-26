@@ -4,6 +4,9 @@
 #include "example2/Logger.h"
 #include "example3/Loan.h"
 #include "example4/Warehouse.h"
+#include "exercise1/Sensor.h"
+#include "exercise2/Course.h"
+#include "exercise2/Student.h"
 
 static void callExample1();
 
@@ -13,11 +16,21 @@ static void callExample3();
 
 static void callExample4();
 
+static void callExercise1();
+
+static void callExercise2();
+
 int main() {
-    // callExample1();
-    // callExample2();
-    // callExample3();
+    // Examples
+    callExample1();
+    callExample2();
+    callExample3();
     callExample4();
+
+    // Exercises
+    callExercise1();
+    callExercise2();
+
     return 0;
 }
 
@@ -63,4 +76,48 @@ static void callExample4() {
     auditor.inspect(w1);
     std::cout << std::endl;
     auditor.inspect(w2);
+}
+
+static void callExercise1() {
+    auto const &sensor = new Sensor(23.4);
+
+    std::cout << "Sensor is initialized" << std::endl;
+    sensor->describe();
+    sensor->describe("Lotharingia");
+    sensor->describe("Lotharingia", 'F');
+    sensor->describe("Lotharingia", 'K');
+    sensor->describe("Lotharingia", 'D');
+}
+
+void enroll(Student &student, Course &course) {
+    if (course.currentStudents < course.maxStudents) {
+        course.currentStudents++;
+        std::cout <<
+                "Student: " << student.name <<
+                "\nFaculty Number: " << student.facultyNumber <<
+                "\nIs enrolled in course: " << course.title << std::endl;
+        return;
+    }
+    std::cout << "Student is not enrolled in course due to full capacity." << std::endl;
+}
+
+static void callExercise2() {
+    Student s1("Kalin", "121221001");
+    Student s3("Boyana", "121221002");
+    Student s2("Marin", "121221003");
+
+    Course c("Vampire Hypnosis", 5, 3);
+
+    auto *registrar = new Registrar();
+    registrar->printReport(c);
+    std::cout << std::endl;
+    std::cout << std::endl;
+    enroll(s1, c);
+    std::cout << std::endl;
+    enroll(s2, c);
+    std::cout << std::endl;
+    enroll(s3, c);
+
+    registrar->printReport(c);
+    delete registrar;
 }
