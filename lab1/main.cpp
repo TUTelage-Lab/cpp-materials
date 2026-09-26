@@ -19,9 +19,9 @@ static void callExercise2();
 static void callExercise3();
 
 int main() {
-    // callExample1();
-    // callExercise1();
-    // callExercise2();
+    callExample1();
+    callExercise1();
+    callExercise2();
     callExercise3();
     return 0;
 }
