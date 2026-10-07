@@ -354,7 +354,7 @@ int main() {
 - `void load(bool upper)` — ако `upper` е `true`, напълва с главни букви `A-Z`;
 - `void load(char from, char to)` — напълва стека с букви в диапазона `[from, to]`.
 
-### Задача 6 — Споделен ресурс
+### Задача 6 — Споделен ресурс  
 
 Два класа `Printer` и `Scanner` споделят едно USB устройство (моделирано като `bool usbInUse`).
 

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "example1//Triangle.h"
+#include "example1/Triangle.h"
 #include "exercise1/Time.h"
 #include "exercise2/Worker.h"
 #include "exercise3/Line.h"
@@ -19,10 +19,10 @@ static void callExercise2();
 static void callExercise3();
 
 int main() {
-    callExample1();
-    callExercise1();
-    callExercise2();
-    callExercise3();
+    // callExample1();
+    // callExercise1();
+    // callExercise2();
+    // callExercise3();
     return 0;
 }
 
