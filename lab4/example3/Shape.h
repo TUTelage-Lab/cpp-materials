@@ -8,7 +8,7 @@ class Shape {
 protected:
     std::string color;
 
-    void printLabel(const std::string& shapeName) const {
+    void printLabel(const std::string &shapeName) const {
         std::cout << shapeName << " [" << color << "]: ";
     }
 
