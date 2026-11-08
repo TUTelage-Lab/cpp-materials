@@ -1,11 +1,9 @@
 #ifndef LAB4_RECTANGLE_H
 #define LAB4_RECTANGLE_H
-#include <iostream>
-
 #include "Shape.h"
 
+
 class Rectangle : public Shape {
-private:
     double width, height;
 
 public:
@@ -13,9 +11,10 @@ public:
         : Shape(color), width(width), height(height) {
     }
 
-    void printArea() const override {
-        printLabel("Rectangle");
-        std::cout << width << "x" << height << ", area=" << width * height << "\n";
+    double area() const override { return width * height; }
+
+    void describe() const override {
+        std::cout << "Rectangle [" << color << "] " << width << "x" << height << ", area=" << area() << "\n";
     }
 };
 

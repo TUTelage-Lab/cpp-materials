@@ -2,6 +2,7 @@
 #define LAB4_VEHICLE_H
 #include <string>
 
+
 class Vehicle {
 protected:
     std::string licensePlate;
@@ -11,14 +12,17 @@ protected:
     double fuelCapacity;
 
 public:
-    Vehicle(const std::string &licensePlate, const std::string &brand,
-            int year, double fuelLevel, double fuelCapacity);
+    Vehicle(const std::string &licensePlate, const std::string &brand, int year,
+            double fuelLevel, double fuelCapacity);
 
     void refuel(double liters);
 
     bool canTravel(double km, double consumption) const;
 
-    void describe() const;
+    virtual void describe() const;
+
+    virtual ~Vehicle() = default;
 };
+
 
 #endif //LAB4_VEHICLE_H

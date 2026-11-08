@@ -1,22 +1,18 @@
 #ifndef LAB4_RIGHTTRIANGLE_H
 #define LAB4_RIGHTTRIANGLE_H
-#include <iostream>
+#include "Triangle.h"
 
-#include "Shape.h"
 
-class RightTriangle : public Shape {
-private:
-    double base, height;
-
+class RightTriangle : public Triangle {
 public:
-    RightTriangle(double base, double height, const std::string &color)
-        : Shape(color), base(base), height(height) {
+    RightTriangle(double a, double b, double c, const std::string &color)
+        : Triangle(a, b, c, color) {
     }
 
-    void printArea() const override {
-        printLabel("Right Triangle");
-        std::cout << "base=" << base << ", height=" << height
-                << ", area=" << 0.5 * base * height << "\n";
+    double area() const override { return a * b / 2; }
+
+    void describe() const override {
+        std::cout << "RightTriangle [" << color << "] a=" << a << ", b=" << b << ", area=" << area() << "\n";
     }
 };
 

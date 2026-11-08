@@ -8,10 +8,12 @@ private:
     double creditLimit, usedCredit;
 
 public:
-    CreditAccount(const std::string& owner, const std::string& iban,
+    CreditAccount(const std::string &owner, const std::string &iban,
                   double initialBalance, double limit);
 
-    bool withdraw(double amount);
+    ~CreditAccount();
+
+    bool withdrawWithCredit(double amount);
 
     void describe() const;
 };

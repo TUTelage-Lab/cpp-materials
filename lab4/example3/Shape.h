@@ -8,15 +8,16 @@ class Shape {
 protected:
     std::string color;
 
-    void printLabel(const std::string &shapeName) const {
-        std::cout << shapeName << " [" << color << "]: ";
-    }
-
 public:
-    explicit Shape(const std::string &color) : color(color) {
+    explicit Shape(const std::string &color);
+
+    virtual double area() const = 0;
+
+    virtual void describe() const {
+        std::cout << "Shape [" << color << "], area=" << area() << "\n";
     }
 
-    virtual void printArea() const = 0;
+    virtual ~Shape() = default;
 };
 
 

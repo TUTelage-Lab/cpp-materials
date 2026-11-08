@@ -1,20 +1,23 @@
-#ifndef LAB4_COMMISSIONEMPLOYEE_H
-#define LAB4_COMMISSIONEMPLOYEE_H
+#ifndef LAB4_EX4_COMMISSIONEMPLOYEE_H
+#define LAB4_EX4_COMMISSIONEMPLOYEE_H
 #include "Employee.h"
 
+
 class CommissionEmployee : public Employee {
-private:
     double baseSalary;
     double salesAmount;
     double commissionRate;
 
 public:
     CommissionEmployee(const std::string &name, const std::string &id,
-                       double baseSalary, double commissionRate);
+                       double base, double rate);
 
     void recordSale(double amount);
 
     double calcSalary() const override;
+
+    void printPayslip() const override;
 };
 
-#endif //LAB4_COMMISSIONEMPLOYEE_H
+
+#endif //LAB4_EX4_COMMISSIONEMPLOYEE_H

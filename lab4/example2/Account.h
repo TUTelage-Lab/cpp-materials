@@ -9,13 +9,13 @@ protected:
     double balance;
 
 public:
-    Account(const std::string& owner, const std::string& iban, double balance);
+    Account(const std::string &owner, const std::string &iban, double initialBalance);
+
+    ~Account();
 
     void deposit(double amount);
 
     bool withdraw(double amount);
-
-    double getBalance() const;
 
     void describe() const;
 };
